@@ -1,11 +1,11 @@
 # Site settings
 author: Karl Benbeneck
-title: 
+title: Learning to Code 
 header-img: img/home-bg.png
 email: kbenbeneck@gmail.com
 copyright_name: Karl Benbeneck
 description: > # this means to ignore newlines until "baseurl:"
-  
+  Remote Bound
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: 
 github_username:  kbenbeneck
