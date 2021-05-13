@@ -19,7 +19,7 @@ Now, I don’t want to open my digital pantry up to just anyone, so one must sig
 Once we’re signed in, click “Create” to begin the two step process of meal construction. Clicking “Create” sends a get request to the “/meals/new” route which contains the form, outlining the meal model. 
 
 After giving the meal a name and choosing a food for each macro, on submit, the form will send the meal via a post request. During this transfer, your choices are compiled into a hash of key value pairs called params.
-
+```
 params
 => {"meal"=>
   {"name"=>"My Favorite",
@@ -28,15 +28,15 @@ params
    "fat"=>"Avocado",
    "fruit"=>"Salsa",
    "veg"=>"Peppers"}}
-
+```
 Before saving the creation to the Meals database, the params hash is used as an argument to build a new instance of a meal that belongs to the current user. 
-
+```
             @meal = current_user.meals.build(params[:meal])
             if @meal.save
                 redirect "/meals/#{@meal.id}"
-
+```
 Once saved, the meal is given an ID form the database. That allows this meal instance to be called via a dynamic route. This get request will display or show the meal being called. 
-
+```
 <h1>Looks Yummy!</h1>
 <ul>
     <li><%=@meal.name%>
@@ -46,7 +46,7 @@ Once saved, the meal is given an ID form the database. That allows this meal ins
     <li><%=@meal.fruit%>
     <li><%=@meal.veg%>
 </ul>
-
+```
 
 From the show page, the user may navigate to all other CRUD functions via links: to edit or delete this meal, to create more meals,  or to view their collection of creations. 
 
